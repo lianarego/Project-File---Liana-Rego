@@ -18,7 +18,6 @@ Secondary color (light blue): R136 G206 B247, HEX #88cef7
   max-width: 30px;
   display: inline-block;
   margin: 0 10px;
-  text-align: center;
 }
 
 /* Layout styling */
@@ -27,7 +26,6 @@ Secondary color (light blue): R136 G206 B247, HEX #88cef7
   padding: 0 15px;
 }
 
-#work-section
 .row {
   margin: 25px 0; /* 25px top and bottom, 0 left and right */
   padding-bottom: 25px;
