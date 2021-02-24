@@ -14,11 +14,7 @@ Secondary color (light blue): R136 G206 B247, HEX #88cef7
   display: inline-block;
 }
 
-.social-media {
-  max-width: 30px;
-  display: inline-block;
-  margin: 0 10px;
-}
+
 
 /* Layout styling */
 
@@ -32,12 +28,31 @@ Secondary color (light blue): R136 G206 B247, HEX #88cef7
   border-bottom: 1px solid #4a4a4a;
 }
 
+footer {
+  text-align: left;
+}
+
+.social-media {
+  display: inline-block;
+  padding-right: 20px;
+  float: right;
+}
+
 #hero-section {
   background-color: #ffe4c4;
   padding: 20px 0;
   display: inline-block;
   width: 100%;
   text-align: center /* centers text */
+}
+
+#skills h3 {
+  margin: 0;
+}
+
+#my-story {
+  padding-bottom: 25px;
+  border-bottom: 1px solid #4a4a4a;
 }
 
 .role {
@@ -89,7 +104,7 @@ nav > ul > li > a:active {
 }
 
 main {
-  padding-top: 100px;
+  padding-top: 120px;
 }
 
 body {
@@ -135,7 +150,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #ffffff;
+  color: #000000;
   text-decoration: underline; /* Underline when hovering */
 }
 
@@ -189,7 +204,7 @@ img  {
 
 /* ========== Media Queries for responsive web ============ */
 
-@media only screen and (min-width: 640px) {
+@media only screen and (min-width: 640px) and (max-width: 1023px) { /* this is for "col-med" classes */
   header {
     text-align: unset;
       padding: 20px 0 10px;
@@ -205,10 +220,63 @@ img  {
   #hero-section span {
     display: block;
   }
+
+  [class*="col-med"]{
+    width: 50%;
+  }
+
+  [class^="col-"][class*="med"][class$="-left"]{
+    float: left;
+    padding-right: 15px;
+  }
+
+  [class^="col-"][class*="med"][class$="-right"]{
+    float: right;
+    padding-left: 15px;
+  }
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
 }
-@media only screen and (min-width: 1024px) {
 
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) { /* this is for "col-lg" classes */
+  .container {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  [class*="lg-5"]{
+    width: 41.66%;
+  }
+
+  [class*="lg-7"]{
+    width: 58.33%;
+  }
+
+  [class^="col-"][class*="lg"][class$="-left"]{
+    float: left;
+    padding-right: 15px;
+  }
+
+  [class^="col-"][class*="lg"][class$="-right"]{
+    float: right;
+    padding-left: 15px;
+  }
+
+  #my-story {
+    border-bottom: 0;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+}
+@media only screen and (min-width: 1440px) {  /* this is for "col-xl" classes */
 
 }
