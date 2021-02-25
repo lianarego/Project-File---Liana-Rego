@@ -39,7 +39,7 @@ footer {
 }
 
 #hero-section {
-  background-color: #ffe4c4;
+  background-color: #white;
   padding: 20px 0;
   display: inline-block;
   width: 100%;
@@ -150,7 +150,7 @@ a {
 
 a:hover,
 a:focus {
-  color: #000000;
+  color: black;
   text-decoration: underline; /* Underline when hovering */
 }
 
@@ -162,12 +162,14 @@ a:active {
 .button {
   display: inline-block;
   background-color: #ff7f50;
-  color: #ffffff;
+  color: black;
+  text-decoration: none;
   font-weight: 400;
   padding: 10px;
   border-radius: 3px;
   border-bottom: 2px solid #994c30; /* width of the border, type, color */
-  transition: 0.2s opacity;
+  transition-duration: 0.2s;
+  transition-property: opacity;
 }
 
 .button:hover {
@@ -200,6 +202,79 @@ a:active {
 
 img  {
   width: 100%;
+}
+
+/* CSS Animation */
+@keyframes color-change {
+  0% {fill: #DCF5F3;}
+  100% {fill: #ffffff;}
+}
+
+@keyframes cloud1-move-right{
+  from {transform: translate(00px, 413px);}
+  to {transform: translate(330px, 413px);}
+}
+
+@keyframes cloud2-move-right{
+  from {transform: translate(241px, 582px);}
+  to {transform: translate(441px, 582px);}
+}
+
+@keyframes cloud3-move-right{
+  from {transform: translate(502px, 478px);}
+  to {transform: translate(1102px, 478px);}
+}
+
+@keyframes cloud4-move-left{
+  from {transform: translate(808px, 370px);}
+  to {transform: translate(208px, 370px);}
+}
+
+@keyframes cloud5-move-left{
+  from {transform: translate(788px, 569px);}
+  to {transform: translate(588px, 569px);}
+}
+
+#cloud-1 {
+  position: relative;
+  animation-duration: 3s, 60s;
+  animation-name: color-change, cloud1-move-right;
+  animation-iteration-count: infinite;
+  animation-direction: alternate, normal;
+  animation-timing-function: ease-in-out, linear;
+}
+
+#cloud-2 {
+  animation-duration: 3s, 60s;
+  animation-name: color-change, cloud2-move-right;
+  animation-iteration-count: infinite;
+  animation-direction: alternate, normal;
+  animation-timing-function: ease-in-out, linear;
+}
+
+#cloud-3 {
+  position: relative;
+  animation-duration: 3s, 60s;
+  animation-name: color-change, cloud3-move-right;
+  animation-iteration-count: infinite;
+  animation-direction: alternate, normal;
+  animation-timing-function: ease-in-out, linear;
+}
+
+#cloud-4 {
+  animation-duration: 3s, 60s;
+  animation-name: color-change, cloud4-move-left;
+  animation-iteration-count: infinite;
+  animation-direction: alternate, normal;
+  animation-timing-function: ease-in-out, linear;
+}
+
+#cloud-5 {
+  animation-duration: 3s, 60s;
+  animation-name: color-change, cloud5-move-left;
+  animation-iteration-count: infinite;
+  animation-direction: alternate, normal;
+  animation-timing-function: ease-in-out, linear;
 }
 
 /* ========== Media Queries for responsive web ============ */
@@ -247,6 +322,22 @@ img  {
     max-width: 1200px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  header {
+    text-align: unset;
+      padding: 20px 0 10px;
+      font-size: 18px;
+  }
+
+  nav {
+    width: auto;
+    float: right;
+    margin-top: 4px;
+  }
+
+  #hero-section span {
+    display: block;
   }
 
   [class*="lg-5"]{
